@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stocks Page</title>
+  <link rel="stylesheet" href="styles/mainStyles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="stockTracker.html">Stocks</a></li>
+      <li><a href="dogGallery.html">Dogs</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Stock Tracker</h1>
+    <form id="stock-form">
+      <label for="ticker">Enter Stock Ticker:</label>
+      <input type="text" id="ticker" required />
+
+      <label for="range">Select Range:</label>
+      <select id="range">
+        <option value="30">30 Days</option>
+        <option value="60">60 Days</option>
+        <option value="90">90 Days</option>
+      </select>
+
+      <button type="submit" class="custom-btn">Get Stock Data</button>
+    </form>
+
+    <canvas id="stockChart" width="600" height="300"></canvas>
+
+    <h2>Top 5 Reddit Stocks</h2>
+    <table id="reddit-stocks">
+      <thead>
+        <tr>
+          <th>Ticker</th>
+          <th>Comments</th>
+          <th>Sentiment</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <div class="audio-controls">
+    <p>Say "Lookup [stock]" or try "Hello", "Change the color to blue", etc.</p>
+    <button onclick="annyang.start()">Turn On Audio</button>
+    <button onclick="annyang.abort()">Turn Off Audio</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+  <script src="scripts/voiceCommands.js"></script>
+  <script src="scripts/stockFunctions.js"></script>
+</body>
+</html>

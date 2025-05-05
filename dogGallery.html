@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dogs Page</title>
+  <link rel="stylesheet" href="styles/mainStyles.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="stockTracker.html">Stocks Page</a></li>
+      <li><a href="dogGallery.html">Dog Gallery</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Dog Viewer</h1>
+
+    <section id="carousel-container"></section>
+
+    <h2>Dog Breeds</h2>
+    <div id="breed-buttons"></div>
+
+    <div id="breed-info" style="display: none;">
+      <h3 id="breed-name"></h3>
+      <p id="breed-desc"></p>
+      <p><strong>Life Span:</strong> <span id="breed-life"></span></p>
+    </div>
+  </main>
+
+  <div class="audio-controls">
+    <p>Say "Load dog breed [name]" or use the navigation commands.</p>
+    <button onclick="annyang.start()">Microphone On</button>
+    <button onclick="annyang.abort()">Microphone Off</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+  <script src="scripts/voiceCommands.js"></script>
+  <script src="scripts/dogFunctions.js"></script>
+</body>
+</html>
