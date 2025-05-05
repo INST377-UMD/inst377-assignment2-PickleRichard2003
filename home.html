@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home - Class Activities</title>
+  <link rel="stylesheet" href="styles/mainStyles.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="stockTracker.html">Stocks</a></li>
+      <li><a href="dogGallery.html">Dogs</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Welcome to the Class Activities Site</h1>
+    <button onclick="location.href='stockTracker.html'" class="custom-btn">Stocks</button>
+    <button onclick="location.href='dogGallery.html'" class="custom-btn">Dogs</button>
+    <div id="quote"></div>
+  </main>
+
+  <div class="audio-controls">
+    <p>Say "Hello", "Change the color to red", or "Navigate to stocks".</p>
+    <button onclick="annyang.start()">Turn On Audio</button>
+    <button onclick="annyang.abort()">Turn Off Audio</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+  <script src="scripts/voiceCommands.js"></script>
+  <script>
+    fetch("https://zenquotes.io/api/random")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("quote").innerText = data[0].q + " — " + data[0].a;
+      });
+  </script>
+</body>
+</html>
